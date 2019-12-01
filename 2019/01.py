@@ -24,5 +24,3 @@ def total_count(filename):
             total += fuel
             fuel = math.floor(fuel / 3) - 2
     return total
-
-print(total_count("2019/1.txt"))

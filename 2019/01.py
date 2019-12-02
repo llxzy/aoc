@@ -1,4 +1,3 @@
-#todo load file in separate file
 import math
 
 def read_file(filename):
@@ -7,16 +6,13 @@ def read_file(filename):
 
 
 def count(filename):
-    ## first
     total = 0
     for i in read_file(filename):
         total += math.floor(i / 3) - 2
     return total
 
 
-
-#p2
-def total_count(filename):
+def count_with_fuel(filename):
     total = 0
     for i in read_file(filename):
         fuel = math.floor(i / 3) - 2

@@ -20,3 +20,8 @@ def count_with_fuel(filename):
             total += fuel
             fuel = math.floor(fuel / 3) - 2
     return total
+
+def count_lambda(filename):
+    func = lambda x: math.floor(x / 3) - 2
+    lines = read_file(filename)
+    return sum(map(func, lines))

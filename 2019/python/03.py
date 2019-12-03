@@ -39,11 +39,6 @@ def solution(filename):
             if i in intersections:
                 out[i] = out.get(i, 0) + a[i]
 
-    result = []
-    for i in out:
-        result.append(out[i])
-
-
     #part1
     # return min(workset)
     #part2

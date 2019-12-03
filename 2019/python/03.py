@@ -6,7 +6,7 @@ def get_input(filename):
 def dist(a, b):
     return abs(a[0] - b[0]) + abs(b[1] - a[1])
 
-def part1(filename):
+def solution(filename):
     lines = get_input(filename)
     center = (0, 0)
     temp = []
@@ -32,13 +32,11 @@ def part1(filename):
 
     intersections = set.intersection(*temp)
     workset = [dist(center, i) for i in intersections]
-    print("intersections", intersections)
 
     out = {}
     for a in temp2:
         for i in a:
             if i in intersections:
-                print(i)
                 out[i] = out.get(i, 0) + a[i]
 
     result = []
@@ -49,4 +47,4 @@ def part1(filename):
     #part1
     # return min(workset)
     #part2
-    return min(result)
+    return min([out[item] for item in out])

@@ -21,6 +21,7 @@ def count_with_fuel(filename):
             fuel = math.floor(fuel / 3) - 2
     return total
 
+
 def count_lambda(filename):
     func = lambda x: math.floor(x / 3) - 2
     lines = read_file(filename)

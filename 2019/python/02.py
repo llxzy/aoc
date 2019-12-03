@@ -12,7 +12,6 @@ def opcodes(filename):
     with open(filename, "r") as f:
         line = f.read().strip()
     lines = [int(i) for i in line.split(",")]
-    
     lines[1] = 12
     lines[2] = 2
 

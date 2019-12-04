@@ -21,6 +21,7 @@ def part2(n):
         digits.append(digit)
     return repeat_flag
 
+
 def solution(lower, upper):
     correct_count = 0
     for i in range(lower, upper + 1):

@@ -1,37 +1,30 @@
-def parse_one(n):
-    digits = []
+def part1(n):
+    digits = [n[0]]
     repeat_flag = False
     prev = None
-    for i in n:
-        if digits:
-            if i < max(digits):
-                return False
-        if i == prev:
-            repeat_flag = True
-        digits.append(i)
-        prev = i
-    return repeat_flag and True
-
-def parse_two(n):
-    digits = []
-    repeat_flag = False
-    for i in n:
-        if digits:
-            if i < max(digits):
-                return False
-        if n.count(i) == 2:
-            repeat_flag = True
-        digits.append(i)
-    
+    for digit in n:
+        if digit < max(digits):
+            return False
+        repeat_flag = repeat_flag or digit == prev
+        digits.append(digit)
+        prev = digit
     return repeat_flag
 
-def guess_password(lower, upper):
+
+def part2(n):
+    digits = [n[0]]
+    repeat_flag = False
+    for digit in n:
+        if digit < max(digits):
+            return False
+        repeat_flag = repeat_flag or n.count(digit) == 2
+        digits.append(digit)
+    return repeat_flag
+
+def solution(lower, upper):
     correct_count = 0
     for i in range(lower, upper + 1):
-        # part 1
-        # if parse_num(str(i)):
-        #     correct_count += 1
-        # part 2
-        if parse_two(str(i)):
+        #if part1(str(i)):
+        if part2(str(i)):
             correct_count += 1
     return correct_count

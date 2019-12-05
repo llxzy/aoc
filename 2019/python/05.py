@@ -74,8 +74,5 @@ def computer(lines):
     return 
 
 
-def part1(filename):
-    lines = read_input(filename)
-    return computer(lines)
-
-part1("2019/05.txt")
+def solution(filename):
+    return computer(read_input(filename))

@@ -7,6 +7,7 @@ def read_input(filename):
         lines = f.readlines()
     return [i.strip().split(")") for i in lines]
 
+
 def init_graph(filename):
     lines = read_input(filename)
     orbits = {}
@@ -14,16 +15,14 @@ def init_graph(filename):
         cur = orbits.get(i[0], [])
         cur.append(i[1])
         orbits[i[0]] = cur
-
     return orbits
 
+
 def part1(filename):
-    lines = read_input(filename)
-    center = "COM"
     graph = init_graph(filename)
     orbits = {"COM": 0}
 
-    queue = deque([center])
+    queue = deque(["COM"])
     while queue:
         item = queue.popleft()
         for i in graph[item]:
@@ -81,4 +80,4 @@ def part2(filename):
     return distance
 
 
-print(part2("2019/06.txt"))
+print(part1("2019/06.txt"))
